@@ -82,6 +82,7 @@ private EditText ID ;
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
+                                
                             } else {
                                 Toast.makeText(getBaseContext(), "The ID not found", Toast.LENGTH_LONG).show();
                             }
