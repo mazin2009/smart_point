@@ -35,6 +35,8 @@ private EditText ID ;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.userfile = getSharedPreferences(Constrant.UserFile, MODE_PRIVATE);
+        this.userfileEditer = userfile.edit();
         InitializeView();
 
     }
@@ -77,8 +79,9 @@ private EditText ID ;
 
                                 Toast.makeText(getBaseContext(), "WELCOME", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getBaseContext(), HomePage.class);
-                                intent.putExtra("Pointe", Points);
-                                intent.putExtra("Name", name);
+                                userfileEditer.putString(Constrant.NameOfHajj,name);
+                                userfileEditer.putString(Constrant.Points,Points);
+                                userfileEditer.commit();
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);

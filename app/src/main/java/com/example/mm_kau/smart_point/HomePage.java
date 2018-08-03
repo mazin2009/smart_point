@@ -33,6 +33,7 @@ public class HomePage extends AppCompatActivity implements Designable {
     private TextView Name;
     private ListView LV;
     private ArrayList<REWARDS> ListOfReward;
+    private SharedPreferences userfile;
 
 
     @Override
@@ -41,9 +42,10 @@ public class HomePage extends AppCompatActivity implements Designable {
         setContentView(R.layout.activity_home_page);
         Points = findViewById(R.id.TextPoints);
         Name = findViewById(R.id.Name);
+        this.userfile = getSharedPreferences(Constrant.UserFile, MODE_PRIVATE);
 
-        Points.setText(getIntent().getStringExtra("Pointe"));
-      Name.setText("Mr. "+getIntent().getStringExtra("Name"));
+        Points.setText(userfile.getString(Constrant.Points,"0"));
+        Name.setText("Mr. "+userfile.getString(Constrant.NameOfHajj,"0"));
         InitializeView();
     }
 

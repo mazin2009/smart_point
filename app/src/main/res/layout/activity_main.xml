@@ -5,8 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/mycolor"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:layout_marginTop="80dp"
+        android:id="@+id/imageView2"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="180dp"
+        android:src="@drawable/rsz_white_logo_color_background" />
 
     <EditText
         android:id="@+id/IDOfHAJJ"
@@ -14,7 +23,7 @@
         android:layout_height="60dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/mystyle"
         android:ems="10"
         android:hint="  Enter Your ID number"
